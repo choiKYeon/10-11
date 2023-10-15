@@ -6,6 +6,7 @@ public class Request {
     private Map<String, String> params = new HashMap<>();
     public Request(String command) {
         String[] commandBits = command.split("\\?", 2);
+        // 삭제?id=1 & 삭제?id=2 & 삭제?id=3
         actionCode = commandBits[0];
         if (commandBits.length == 1) return;
         String[] paramsBits = commandBits[1].split("&");
