@@ -1,10 +1,9 @@
-package org.example;
+package org.example.wisesaying.entity;
 
 public class WiseSaying {
     private long id;
     private String content;
     private String author;
-
     public WiseSaying(long id, String content, String author){
         this.id = id;
         this.content = content;
@@ -19,10 +18,10 @@ public class WiseSaying {
     public String getAuthor() {
         return author;
     }
-    public void setAuthor (String author) {
+    public void setAuthor(String author) {
         this.author = author;
     }
-    public void setContent (String content) {
+    public void setContent(String content) {
         this.content = content;
     }
 }

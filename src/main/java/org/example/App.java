@@ -1,22 +1,21 @@
 package org.example;
 
-
-import org.example.system.SystemController;
-import org.example.wisesaying.entity.WiseSayingController;
+import org.example.system.controller.SystemController;
+import org.example.wisesaying.controller.WiseSayingController;
+import org.example.wisesaying.entity.WiseSaying;
 
 public class App {
     public void run() {
-        SystemController systemController = new SystemController();
         WiseSayingController wiseSayingController = new WiseSayingController();
+        SystemController systemController = new SystemController();
         System.out.println("== 명언 앱 ==");
+
         while (true) {
-            System.out.print("명령) ");
-            String command = Container.getSc().nextLine().trim();
+            System.out.print("명령)");
+            String answer = Container.getsc().nextLine().trim();
+            Request request = new Request(answer);
 
-            // 삭제?id=1
-            Request request = new Request(command);
-
-            switch (request.getActionCode()) {
+            switch (request.getActioncode()) {
                 case "종료":
                     systemController.exit();
                     return;
